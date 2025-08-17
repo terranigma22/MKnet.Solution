@@ -125,9 +125,23 @@ a:not([href]):not([tabindex]) {
         margin-bottom: 0;
     }
 
+.header-title-mk, .header-title-et {
+    color: red;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 30px;
+}
 
-/*Scroll To Up*/ 
+.header-title-n {
+    color: orange;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 30px;
+}
 
+
+
+/*Scroll To Up*/
 .back-to-top {
     display: none;
     position: fixed;
@@ -421,20 +435,19 @@ a:not([href]):not([tabindex]) {
 }
 
     #features .featured-bg {
-        background: #fff;
+        background-color: transparent;
     }
 
     #features .featured-border1 {
-        border-bottom: 1px solid #ededed;
-        border-right: 1px solid #ededed;
+        border: 1px solid var(--template-color-05);
     }
 
     #features .featured-border2 {
-        border-bottom: 1px solid #ededed;
+        border: 1px solid var(--template-color-secondary);
     }
 
     #features .featured-border3 {
-        border-right: 1px solid #ededed;
+        border: 1px solid var(--template-color-secondary);
     }
 
     #features .feature-item {
@@ -485,6 +498,7 @@ a:not([href]):not([tabindex]) {
         }
 
         #features .feature-item:hover {
+            border: 1px solid var(--template-color-primary);
             box-shadow: 0px 0px 25px 0px rgba(95, 95, 95, 0.24);
             -moz-transition: all .8s ease;
             -webkit-transition: all .8s ease;
