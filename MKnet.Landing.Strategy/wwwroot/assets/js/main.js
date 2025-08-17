@@ -53,29 +53,6 @@ window.mobileMenuToggle = {
         });
         document.addEventListener('scroll', navmenuScrollspy);
 
-        /**
-        * Hide mobile nav on same-page/hash links
-        */
-        document.querySelectorAll('#navmenu a').forEach(navmenu => {
-            navmenu.addEventListener('click', () => {
-                if (document.querySelector('.mobile-nav-active')) {
-                    mobileNavToogle();
-                }
-            });
-
-        });
-
-        /**
-       * Toggle mobile nav dropdowns
-       */
-        document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-            navmenu.addEventListener('click', function (e) {
-                e.preventDefault();
-                this.parentNode.classList.toggle('active');
-                this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
-                e.stopImmediatePropagation();
-            });
-        });
     }
 };
 
