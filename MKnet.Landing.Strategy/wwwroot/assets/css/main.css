@@ -1306,7 +1306,7 @@ section,
 
 .services .service-card .service-icon {
   margin-bottom: 25px;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  /*background-color: color-mix(in srgb, var(--accent-color), transparent 90%);*/
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1320,6 +1320,13 @@ section,
   color: var(--accent-color);
   transition: all 0.3s ease;
 }
+
+    .services .service-card .service-icon img {
+        height: 64px;
+        aspect-ratio: auto;
+        overflow:hidden;
+        transition: all 0.3s ease;
+    }
 
 .services .service-card h3 {
   font-size: 28px;
@@ -2177,20 +2184,29 @@ section,
 
 .team .team-member:hover {
   border-color: color-mix(in srgb, var(--accent-color), transparent 70%);
+
 }
 
-.team .team-member .member-img {
-  flex: 0 0 200px;
-  overflow: hidden;
-}
+    .team .team-member:hover .member-img img {
+        transform: scale(1.08);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.team .team-member .member-img img {
-  width: 200px;
-  height: 100%;
-  object-fit: cover;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-}
+    .team .team-member .member-img {
+        flex: 0 0 200px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        overflow: hidden;
+        position: relative;
+    }
+
+        .team .team-member .member-img img {
+            width: 200px;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: block;
+        }
 
 .team .team-member .member-info {
   padding: 25px;
