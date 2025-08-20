@@ -1,0 +1,38 @@
+[
+  {
+    "Name": "Walter White",
+    "Position": "Chief Executive Officer",
+    "Image": "person-m-7.webp",
+    "Description": "Líder visionario encargado de la dirección estratégica y el crecimiento de la empresa.",
+    "WhatsappUrl": "https://wa.me/525512345678",
+    "FacebookUrl": "https://facebook.com/walterwhite",
+    "DiscordUrl": "https://discord.com/users/walterwhite"
+  },
+  {
+    "Name": "Sarah Jhonson",
+    "Position": "Product Manager",
+    "Image": "person-f-8.webp",
+    "Description": "Responsable de la gestión de productos y la coordinación entre equipos de desarrollo y clientes.",
+    "WhatsappUrl": "https://wa.me/525587654321",
+    "FacebookUrl": "https://facebook.com/sarahjhonson",
+    "DiscordUrl": "https://discord.com/users/sarahjhonson"
+  },
+  {
+    "Name": "William Anderson",
+    "Position": "CTO",
+    "Image": "person-m-6.webp",
+    "Description": "Encargado de la innovación tecnológica y la supervisión de los proyectos técnicos.",
+    "WhatsappUrl": "https://wa.me/525511223344",
+    "FacebookUrl": "https://facebook.com/williamanderson",
+    "DiscordUrl": "https://discord.com/users/williamanderson"
+  },
+  {
+    "Name": "Amanda Jepson",
+    "Position": "Accountant",
+    "Image": "person-f-4.webp",
+    "Description": "Especialista en finanzas y contabilidad, asegurando la salud financiera de la empresa.",
+    "WhatsappUrl": "https://wa.me/525544332211",
+    "FacebookUrl": "https://facebook.com/amandajepson",
+    "DiscordUrl": "https://discord.com/users/amandajepson"
+  }
+]

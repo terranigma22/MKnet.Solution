@@ -1,5 +1,7 @@
 ﻿@using MKnet.Landing.Strategy.Components.Landing.Components
 @using MKnet.Landing.Strategy.Domain.Models
+@using System.Text.Json
+@using MKnet.Landing.Strategy.Domain.Services
 
 <section class="faq-9 faq section" id="faq">
 
@@ -36,14 +38,13 @@
 
     protected override async Task OnInitializedAsync()
     {
-        items = new List<FaqDTO>
+        try
         {
-            new FaqDTO("Pregunta 01", "Descripción de la pregunta."),
-            new FaqDTO("Pregunta 02", "Descripción de la pregunta."),
-            new FaqDTO("Pregunta 03", "Descripción de la pregunta."),
-            new FaqDTO("Pregunta 04", "Descripción de la pregunta."),
-            new FaqDTO("Pregunta 05", "Descripción de la pregunta."),
-        };
-        await Task.CompletedTask;
+            items = await JsonHelper.LoadList<FaqDTO>("faqs");
+        }
+        catch (Exception)
+        {
+            items = [];
+        }
     }
 }

@@ -1,4 +1,7 @@
-﻿<!-- Hero Section -->
+﻿@using MKnet.Landing.Strategy.Domain.Models
+@using MKnet.Landing.Strategy.Domain.Services
+
+
 <section id="hero" class="hero section">
     <div class="container">
         <div class="row">
@@ -6,16 +9,13 @@
                 <div class="content">
 
                     <div class="main-heading">
-                        <h1>CREATIVE <br>DESIGN</h1>
+                        <h1>@item.Title</h1>
                     </div>
 
                     <div class="divider"></div>
 
                     <div class="description">
-                        <p>Discover innovative strategies for impactful visual communication. We transform ideas into
-                            compelling realities, ensuring your brand stands out in a crowded marketplace. Our dedicated
-                            team leverages cutting-edge techniques to deliver exceptional results that resonate with
-                            your audience.</p>
+                        <p>@item.Description</p>
                     </div>
 
                     <div class="cta-button">
@@ -30,22 +30,29 @@
             <div class="col-lg-5" data-aos="zoom-out">
                 <div class="visual-content">
                     <div class="fluid-shape">
-                        <img src="assets/img/hero/hero.webp" alt="Abstract Fluid Shape" class="fluid-img">
+                        <img src="assets/img/hero/@item.Image" alt="Abstract Fluid Shape" class="fluid-img" loading="lazy">
                     </div>
-
-                    @* <div class="stats-card">
-                        <div class="stats-number">
-                            <h2>5K</h2>
-                        </div>
-                        <div class="stats-label">
-                            <p>Successful Campaigns</p>
-                        </div>
-                        <div class="stats-arrow">
-                            <a href="#portfolio"><i class="bi bi-arrow-up-right"></i></a>
-                        </div>
-                    </div> *@
                 </div>
             </div>
         </div>
     </div>
-</section><!-- /Hero Section -->
+</section>
+
+@code {
+    private HeroDTO item = new HeroDTO("");
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            item = await JsonHelper.Load<HeroDTO>("hero");
+
+            if (item is null)
+                item = new HeroDTO("");
+        }
+        catch (Exception)
+        {
+            item = new HeroDTO("");
+        }
+    }
+}

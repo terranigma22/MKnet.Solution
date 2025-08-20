@@ -2,19 +2,20 @@
 @using MKnet.Landing.Strategy.Domain.Models
 @using MKnet.Landing.Strategy.Domain.Services
 
-<section id="services" class="services section">
+<section id="team" class="team section light-background">
 
     <div class="container section-title" data-aos="fade-up">
-        <h2>Servicios</h2>
-        <div><span>Que</span> <span class="description-title">Ofrecemos</span></div>
+        <h2>Miembros</h2>
+        <div><span>De Nuestro</span> <span class="description-title">Equipo</span></div>
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row justify-content-center">
+        <div class="row gy-4">
+
             @foreach (var item in items)
             {
-                <Service Item="item"/>
+                <Member Item="item"/>
             }
         </div>
 
@@ -22,15 +23,14 @@
 
 </section>
 
-
-@code{
-    private List<ServiceDTO> items = [];
+@code {
+    private List<MemberDTO> items = [];
 
     protected override async Task OnInitializedAsync()
     {
         try
         {
-            items = await JsonHelper.LoadList<ServiceDTO>("services");
+            items = await JsonHelper.LoadList<MemberDTO>("members");
         }
         catch (Exception)
         {

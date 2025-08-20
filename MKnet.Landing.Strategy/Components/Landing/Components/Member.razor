@@ -7,14 +7,14 @@
         </div>
         <div class="member-info flex-grow-1">
             <h4>@Item.Name</h4>
-            <span>@Item.SubTitle</span>
+            <span>@Item.Position</span>
             <p>
                 @Item.Description
             </p>
             <div class="social">
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-whatsapp"></i></a>
-                <a href=""><i class="bi bi-discord"></i></a>
+                <a href="@Item.FacebookUrl"><i class="bi bi-facebook"></i></a>
+                <a href="@Item.WhatsappUrl"><i class="bi bi-whatsapp"></i></a>
+                <a href="@Item.DiscordUrl"><i class="bi bi-discord"></i></a>
             </div>
         </div>
     </div>

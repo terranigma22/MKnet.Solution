@@ -1,0 +1,22 @@
+[
+  {
+    "Title": "Inicio",
+    "Link": ""
+  },
+  {
+    "Title": "Nosotros",
+    "Link": "#about"
+  },
+  {
+    "Title": "Servicios",
+    "Link": "#services"
+  },
+  {
+    "Title": "Multimedia",
+    "Link": "#portfolio"
+  },
+  {
+    "Title": "Miembros",
+    "Link": "#team"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "Title": "Antivirus",
+    "SubTitle": "Nod32",
+    "Image": "nod32.png",
+    "Description": "Descripción del servicio."
+  },
+  {
+    "Title": "Antivirus",
+    "SubTitle": "Segurmática",
+    "Image": "segurmatica.png",
+    "Description": "Descripción del servicio."
+  },
+  {
+    "Title": "Conexión a la",
+    "SubTitle": "Red",
+    "Image": "red.png",
+    "Description": "Descripción del servicio."
+  },
+  {
+    "Title": "Multimedia",
+    "SubTitle": "Emby",
+    "Image": "emby.png",
+    "Description": "Descripción del servicio."
+  }
+]

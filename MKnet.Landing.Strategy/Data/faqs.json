@@ -1,0 +1,22 @@
+[
+  {
+    "Question": "¿Cómo puedo contactar al equipo?",
+    "Answer": "Puede contactarnos a través del formulario de contacto en la página o enviando un correo electrónico a info@mknet.com."
+  },
+  {
+    "Question": "¿Qué servicios ofrecen?",
+    "Answer": "Ofrecemos consultoría, desarrollo web, marketing digital y soporte técnico."
+  },
+  {
+    "Question": "¿Dónde están ubicados?",
+    "Answer": "Nuestra oficina principal está en Ciudad de México, pero trabajamos con clientes de todo el mundo."
+  },
+  {
+    "Question": "¿Cuánto tiempo tarda un proyecto típico?",
+    "Answer": "El tiempo depende de la complejidad y los requisitos, pero la mayoría de los proyectos se completan entre 2 y 8 semanas."
+  },
+  {
+    "Question": "¿Ofrecen soporte después de la entrega?",
+    "Answer": "Sí, ofrecemos soporte y mantenimiento continuo para todos nuestros clientes."
+  }
+]
