@@ -26,6 +26,12 @@ window.mobileMenuToggle = {
                 });
             });
 
+            document.querySelectorAll('.faq-item h3, .faq-item .faq-toggle, .faq-item .faq-header').forEach((faqItem) => {
+                faqItem.addEventListener('click', () => {
+                    faqItem.parentNode.classList.toggle('faq-active');
+                });
+            });
+
             isotopeItem.querySelectorAll('.isotope-filters li').forEach(function (filters) {
                 filters.addEventListener('click', function () {
                     isotopeItem.querySelector('.isotope-filters .filter-active').classList.remove('filter-active');

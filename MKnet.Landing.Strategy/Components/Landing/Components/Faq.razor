@@ -1,0 +1,14 @@
+﻿@using MKnet.Landing.Strategy.Domain.Models
+
+<div class="faq-item">
+    <h3>@Item.Title</h3>
+    <div class="faq-content">
+        <p>@Item.Description</p>
+    </div>
+    <i class="faq-toggle bi bi-chevron-right"></i>
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public FaqDTO Item { get; set; }
+}
