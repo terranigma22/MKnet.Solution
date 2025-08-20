@@ -12,9 +12,14 @@
                 @Item.Description
             </p>
             <div class="social">
-                <a href="@Item.FacebookUrl"><i class="bi bi-facebook"></i></a>
-                <a href="@Item.WhatsappUrl"><i class="bi bi-whatsapp"></i></a>
-                <a href="@Item.DiscordUrl"><i class="bi bi-discord"></i></a>
+                @if (!string.IsNullOrEmpty(Item.WhatsappUrl))
+                {
+                    <a href="@Item.WhatsappUrl"><i class="bi bi-whatsapp"></i></a>
+                }
+                @if (!string.IsNullOrEmpty(Item.DiscordUrl))
+                {
+                    <a href="@Item.DiscordUrl"><i class="bi bi-discord"></i></a>
+                }
             </div>
         </div>
     </div>
