@@ -1,4 +1,4 @@
-﻿namespace MKnet.Landing.Strategy.Models
+﻿namespace MKnet.Landing.Strategy.Domain.Models
 {
     public record ServiceDTO(string Title, string SubTitle, string Image, string Description);
 
