@@ -2,6 +2,10 @@
 
 @inject IJSRuntime JS
 
+<head>
+    <LandingHead />
+</head>
+
 <body class="index-page">
 
     <Header />
@@ -11,6 +15,8 @@
     </main>
 
     <Footer />
+
+    <LandingScripts />
 
 </body>
 
@@ -29,7 +35,6 @@
             await JS.InvokeVoidAsync("aosInit");
             await JS.InvokeVoidAsync("navmenuScrollspy");
             await JS.InvokeVoidAsync("initSwiper");
-
         }
     }
 }

@@ -1,12 +1,17 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <LandingHead/>
-</head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <base href="/" />
 
-<body>
-    <LandingBody/>
-</body>
+        <link href="assets/img/favicon.png" rel="icon" type="image/png" loading="lazy">
+    </head>
+
+    <body>
+        <Routes @rendermode="InteractiveServer" />
+        <script src="_framework/blazor.web.js"></script>
+    </body>
 
 </html>
