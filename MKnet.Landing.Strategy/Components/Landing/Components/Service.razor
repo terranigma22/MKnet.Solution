@@ -5,11 +5,26 @@
         <div class="service-icon">
             <img src="assets/img/services/@Item.Image" alt="@Item.Title">
         </div>
-        <h3>
-            <a href="service-details.html">
-                @Item.Title <span>@Item.SubTitle</span>
+        @if(!string.IsNullOrEmpty(Item.Link))
+        {
+            <a href="@Item.Link" class="card-action d-flex align-items-center justify-content-center rounded-circle" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-link-45deg"></i>
             </a>
-        </h3>
+            <h3>
+                <a href="@Item.Link" target="_blank" rel="noopener noreferrer">
+                    @Item.Title <span>@Item.SubTitle</span>
+                </a>
+            </h3>
+        }
+        else
+        {
+            <h3>
+                <a href="#services">
+                    @Item.Title <span>@Item.SubTitle</span>
+                </a>
+            </h3>
+        }
+
         <p>
             @Item.Description
         </p>

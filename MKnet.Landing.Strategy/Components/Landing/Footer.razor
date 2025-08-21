@@ -1,5 +1,8 @@
 ﻿@using MKnet.Landing.Strategy.Domain.Models
 @using MKnet.Landing.Strategy.Domain.Services
+
+@inject IJSRuntime JS
+
 <footer id="footer" class="footer">
 
     <div class="container footer-top">
@@ -41,7 +44,7 @@
 </footer>
 
 <!-- Scroll Top -->
-<a href="" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+<a href="" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" @onclick="@ScrollToTop">
     <i class="bi bi-arrow-up-short"></i>
 </a>
 
@@ -71,5 +74,10 @@
             sections = [];
             services = [];
         }
+    }
+
+    private async Task ScrollToTop()
+    {
+        await JS.InvokeVoidAsync("mobileMenuToggle.scrollToTop");
     }
 }

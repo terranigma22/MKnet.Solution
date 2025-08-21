@@ -6,7 +6,26 @@ window.mobileMenuToggle = {
         btn.classList.toggle('bi-list');
         btn.classList.toggle('bi-x');
     },
+    scrollToTop: function () {
+        let scrollTop = document.querySelector('.scroll-top');
+        if (scrollTop) {
+            window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+        }
+    },
     initScrollListener: function () {
+        window.addEventListener('scroll', toggleScrolled);
+
+
+        //let scrollTop = document.querySelector('.scroll-top');
+        //scrollTop.addEventListener('click', (e) => {
+        //    e.preventDefault();
+        //    window.scrollTo({
+        //        top: 0,
+        //        behavior: 'smooth'
+        //    });
+        //});
+        document.addEventListener('scroll', toggleScrollTop);
+
         const glightbox = GLightbox({
             selector: '.glightbox'
         });
@@ -46,17 +65,6 @@ window.mobileMenuToggle = {
             });
         });
 
-        let scrollTop = document.querySelector('.scroll-top');
-        window.addEventListener('scroll', toggleScrolled);
-        document.addEventListener('scroll', toggleScrollTop);
-
-        scrollTop.addEventListener('click', (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
         document.addEventListener('scroll', navmenuScrollspy);
 
     }
@@ -105,7 +113,7 @@ function navmenuScrollspy() {
         if (!navmenulink.hash) return;
         let section = document.querySelector(navmenulink.hash);
         if (!section) return;
-        let position = window.scrollY + 200;
+        let position = window.scrollY + 300;
         if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
             document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
             navmenulink.classList.add('active');

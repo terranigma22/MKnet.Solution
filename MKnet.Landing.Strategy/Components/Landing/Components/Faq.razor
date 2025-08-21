@@ -3,7 +3,12 @@
 <div class="faq-item">
     <h3>@Item.Question</h3>
     <div class="faq-content">
-        <p>@Item.Answer</p>
+        <p>@Item.Answer 
+            @if (!string.IsNullOrEmpty(Item.Link))
+            {
+                <a href="@Item.Link" target="_blank" rel="noopener noreferrer"><i class="bi bi-link-45deg"></i></a>
+            }
+        </p>
     </div>
     <i class="faq-toggle bi bi-chevron-right"></i>
 </div>
