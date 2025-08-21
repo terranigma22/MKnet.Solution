@@ -70,6 +70,28 @@ window.mobileMenuToggle = {
     }
 };
 
+window.initCustomSwiper = function (selector, speed, delay) {
+    const container = document.querySelector(selector);
+    if (!container) return;
+
+    const configScript = container.querySelector('.swiper-config');
+    if (!configScript) return;
+
+    let config = {};
+    try {
+        config = JSON.parse(configScript.textContent);
+    } catch (e) {
+        console.error("Error parsing Swiper config JSON", e);
+        return;
+    }
+
+    // Sobrescribe los valores si se proporcionan
+    if (typeof speed === "number") config.speed = speed;
+    if (typeof delay === "number" && config.autoplay) config.autoplay.delay = delay;
+
+    new Swiper(container, config);
+};
+
 function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');

@@ -1,5 +1,8 @@
 ﻿@using MKnet.Landing.Strategy.Domain.Models
 @using MKnet.Landing.Strategy.Domain.Services
+
+@inject IJSRuntime JS
+
 <section id="about" class="about section">
 
     <div class="container section-title" data-aos="fade-up">
@@ -11,8 +14,36 @@
 
         <div class="row gx-5 align-items-center">
             <div class="col-lg-6" data-aos="fade-right" data-aos-delay="200">
-                <div class="about-image position-relative">
-                    <img src="assets/img/about/@item.Image" class="img-fluid rounded-4 shadow-sm" alt="About Image" loading="lazy">
+                <div class="swiper init-swiper">
+                    <script type="application/json" class="swiper-config">
+                        {
+                          "slidesPerView": 1,
+                          "loop": true,
+                          "speed": 3000,
+                          "effect": "fade",
+                          "fadeEffect": {
+                            "crossFade": true
+                          },
+                          "autoplay": {
+                            "delay": 10000
+                          }
+                        }
+                    </script>
+
+                    <div class="swiper-wrapper">
+
+                        @foreach (var item in item.Images)
+                        {
+                            <div class="swiper-slide">
+                                <div class="row">
+                                    <div class="about-image position-relative">
+                                        <img src="assets/img/about/@item" class="img-fluid rounded-4 shadow-sm" alt="@item about image">
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
                 </div>
             </div>
 
@@ -29,7 +60,7 @@
 </section>
 
 @code {
-    private AboutDTO item = new AboutDTO("");
+    private AboutDTO item = new AboutDTO("", "", []);
 
     protected override async Task OnInitializedAsync()
     {
@@ -38,11 +69,19 @@
             item = await JsonHelper.Load<AboutDTO>("about");
 
             if (item is null)
-                item = new AboutDTO("");
+                item = new AboutDTO("", "", []);
         }
         catch (Exception)
         {
-            item = new AboutDTO("");
+            item = new AboutDTO("", "", []);
         }
     }
+
+    // protected override async Task OnAfterRenderAsync(bool firstRender)
+    // {
+    //     if (firstRender)
+    //     {
+    //         await JS.InvokeVoidAsync("initCustomSwiper", ".init-swiper", item.Speed, item.Delay);
+    //     }
+    // }
 }
