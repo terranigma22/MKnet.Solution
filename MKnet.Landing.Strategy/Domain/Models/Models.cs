@@ -6,6 +6,6 @@
     public record HeroDTO(string Title= "", string Image = "hero.webp", string Description = "");
     public record FooterDTO(string Title = "", string Description = "");
     public record SectionDTO(string Title = "", string Link = "");
-    public record MediaDTO(string Title = "", string Category = "", string Image = "media.png");
+    public record MediaDTO(string Title = "", string Category = "", string Link = "", string Image = "media.png");
     public record AboutDTO(string Title, string Description, List<string> Images);
 }
