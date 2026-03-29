@@ -1,0 +1,31 @@
+﻿@using MKnet.Landing.Strategy.Domain.Models
+
+<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+    <div class="team-member d-flex">
+        <div class="member-img">
+            <img src="assets/img/person/@Item.Image" class="img-fluid" alt="" loading="lazy">
+        </div>
+        <div class="member-info flex-grow-1">
+            <h4>@Item.Name</h4>
+            <span>@Item.Position</span>
+            <p>
+                @Item.Description
+            </p>
+            <div class="social">
+                @if (!string.IsNullOrEmpty(Item.WhatsappUrl))
+                {
+                    <a href="@Item.WhatsappUrl"><i class="bi bi-whatsapp"></i></a>
+                }
+                @if (!string.IsNullOrEmpty(Item.DiscordUrl))
+                {
+                    <a href="@Item.DiscordUrl"><i class="bi bi-discord"></i></a>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public MemberDTO Item { get; set; }
+}

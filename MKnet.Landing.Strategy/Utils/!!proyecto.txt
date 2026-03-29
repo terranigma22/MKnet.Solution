@@ -1,0 +1,10 @@
+PROYECTO WEB
+
+- Cambio de color en la web como el logo de la red.
+- Servicios que brindamos.
+- Al estar en NO DISPONIBLE una página que se le de clic que salga una notificación de mantenimiento.
+- Sesión administrativa web y FTP.
+- Un apartado para el Emby para últimna multimedia agregada al Emby.
+- Link hacia WhatsApp y Discord.
+- Sesión de conozcan a los administradores de la red.
+ 

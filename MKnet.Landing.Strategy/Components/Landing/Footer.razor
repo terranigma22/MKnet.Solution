@@ -1,0 +1,83 @@
+﻿@using MKnet.Landing.Strategy.Domain.Models
+@using MKnet.Landing.Strategy.Domain.Services
+
+@inject IJSRuntime JS
+
+<footer id="footer" class="footer">
+
+    <div class="container footer-top">
+        <div class="row gy-4">
+            <div class="col-lg-6 col-md-12 footer-about">
+                <a href="index.html" class="logo d-flex align-items-center">
+                    <span class="sitename">@item.Title</span>
+                </a>
+                <p>@item.Description</p>
+            </div>
+
+            <div class="col-lg-3 col-6 footer-links">
+                <h4>Enlaces útiles</h4>
+                <ul>
+                    @foreach (var item in sections)
+                    {
+                        <li><a href="@item.Link">@item.Title</a></li>
+                    }
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-6 footer-links">
+                <h4>Servicios</h4>
+                <ul>
+                    @foreach (var item in services)
+                    {
+                        <li><a href="#services">@item</a></li>
+                    }
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+        <p>© <strong class="px-1 sitename">MKnET</strong> <span>Todos Los Derechos Reservados</span></p>
+    </div>
+
+</footer>
+
+<!-- Scroll Top -->
+<a href="" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" @onclick="@ScrollToTop">
+    <i class="bi bi-arrow-up-short"></i>
+</a>
+
+
+@code {
+    private List<string> services = [];
+    private List<SectionDTO> sections = [];
+    private FooterDTO item = new FooterDTO("");
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            item = await JsonHelper.Load<FooterDTO>("footer");
+
+            if (item is null)
+                item = new FooterDTO("");
+
+            sections = await JsonHelper.LoadList<SectionDTO>("sections");
+
+            var s = await JsonHelper.LoadList<ServiceDTO>("services");
+            services = s.Select(x => $"{x.Title} {x.SubTitle}").ToList();
+        }
+        catch (Exception)
+        {
+            item = new FooterDTO("");
+            sections = [];
+            services = [];
+        }
+    }
+
+    private async Task ScrollToTop()
+    {
+        await JS.InvokeVoidAsync("mobileMenuToggle.scrollToTop");
+    }
+}

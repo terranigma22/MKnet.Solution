@@ -1,0 +1,68 @@
+﻿@using MKnet.Landing.Strategy.Components.Landing.Components
+@using MKnet.Landing.Strategy.Domain.Models
+@using MKnet.Landing.Strategy.Domain.Services
+
+
+<section id="portfolio" class="portfolio section">
+
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Multimedia</h2>
+        <div><span>Agregado</span> <span class="description-title">Recientemente</span></div>
+    </div>
+
+    <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
+
+            <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="200">
+                <li data-filter="*" class="filter-active">
+                    <i class="bi bi-grid-3x3"></i> Todo
+                </li>
+
+                @foreach (var item in categories)
+                {
+                    <li data-filter=".filter-@item.ToLower()">
+                        <i class="bi bi-camera-reels"></i> @item
+                    </li>
+                }
+            </ul>
+
+            <div class="row g-4 isotope-container" data-aos="fade-up" data-aos-delay="300">
+
+                @foreach (var item in medias)
+                {
+                    <Media Item="item"/>
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+@code {
+    private List<MediaDTO> medias = [];
+    private List<string> categories = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            medias = await JsonHelper.LoadList<MediaDTO>("media");
+            medias = medias.OrderBy(m => m.Category).ToList();
+
+            categories = medias
+                .Select(m => m.Category)
+                .Distinct()
+                .OrderBy(c => c)
+                .ToList(); 
+        }
+        catch (Exception)
+        {
+            medias = [];
+            categories = [];
+        }
+    }
+}

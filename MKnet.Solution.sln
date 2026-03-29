@@ -1,11 +1,35 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36202.13 d17.14
+VisualStudioVersion = 17.14.36202.13
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKnet.LandingPage", "MKnet.LandingPage\MKnet.LandingPage.csproj", "{FDB08FBF-D4A8-4D0F-9631-4D1ED652B2C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MKnet.Landing.Strategy", "MKnet.Landing.Strategy\MKnet.Landing.Strategy.csproj", "{4B157384-D35F-423C-AC75-1B087558470E}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDB08FBF-D4A8-4D0F-9631-4D1ED652B2C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB08FBF-D4A8-4D0F-9631-4D1ED652B2C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB08FBF-D4A8-4D0F-9631-4D1ED652B2C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB08FBF-D4A8-4D0F-9631-4D1ED652B2C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B157384-D35F-423C-AC75-1B087558470E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B157384-D35F-423C-AC75-1B087558470E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B157384-D35F-423C-AC75-1B087558470E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B157384-D35F-423C-AC75-1B087558470E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FDB08FBF-D4A8-4D0F-9631-4D1ED652B2C6} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{4B157384-D35F-423C-AC75-1B087558470E} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B7CEAB59-A3C9-4AB7-BB9D-D6220DF6478C}

@@ -1,0 +1,37 @@
+﻿@using MKnet.Landing.Strategy.Domain.Models
+
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+    <div class="service-card position-relative z-1">
+        <div class="service-icon">
+            <img src="assets/img/services/@Item.Image" alt="@Item.Title">
+        </div>
+        @if(!string.IsNullOrEmpty(Item.Link))
+        {
+            <a href="@Item.Link" class="card-action d-flex align-items-center justify-content-center rounded-circle" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-link-45deg"></i>
+            </a>
+            <h3>
+                <a href="@Item.Link" target="_blank" rel="noopener noreferrer">
+                    @Item.Title <span>@Item.SubTitle</span>
+                </a>
+            </h3>
+        }
+        else
+        {
+            <h3>
+                <a href="#services">
+                    @Item.Title <span>@Item.SubTitle</span>
+                </a>
+            </h3>
+        }
+
+        <p>
+            @Item.Description
+        </p>
+    </div>
+</div>
+
+@code {
+    [Parameter, EditorRequired]
+    public ServiceDTO Item { get; set; }
+}

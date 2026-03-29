@@ -1,0 +1,58 @@
+﻿@using MKnet.Landing.Strategy.Domain.Models
+@using MKnet.Landing.Strategy.Domain.Services
+
+
+<section id="hero" class="hero section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 content-col" data-aos="fade-up">
+                <div class="content">
+
+                    <div class="main-heading">
+                        <h1>@item.Title</h1>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="description">
+                        <p>@item.Description</p>
+                    </div>
+
+                    <div class="cta-button">
+                        <a href="#services" class="btn">
+                            <span>EXPLORA NUESTROS SERVICIOS</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5" data-aos="zoom-out">
+                <div class="visual-content">
+                    <div class="fluid-shape">
+                        <img src="assets/img/hero/@item.Image" alt="Abstract Fluid Shape" class="fluid-img" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    private HeroDTO item = new HeroDTO("");
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            item = await JsonHelper.Load<HeroDTO>("hero");
+
+            if (item is null)
+                item = new HeroDTO("");
+        }
+        catch (Exception)
+        {
+            item = new HeroDTO("");
+        }
+    }
+}

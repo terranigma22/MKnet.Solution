@@ -1,0 +1,40 @@
+﻿@using MKnet.Landing.Strategy.Components.Landing.Components
+@using MKnet.Landing.Strategy.Domain.Models
+@using MKnet.Landing.Strategy.Domain.Services
+
+<section id="team" class="team section light-background">
+
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Miembros</h2>
+        <div><span>De Nuestro</span> <span class="description-title">Equipo</span></div>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+            @foreach (var item in items)
+            {
+                <Member Item="item"/>
+            }
+        </div>
+
+    </div>
+
+</section>
+
+@code {
+    private List<MemberDTO> items = [];
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            items = await JsonHelper.LoadList<MemberDTO>("members");
+        }
+        catch (Exception)
+        {
+            items = [];
+        }
+    }
+}

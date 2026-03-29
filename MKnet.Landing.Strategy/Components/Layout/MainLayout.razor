@@ -1,0 +1,40 @@
+﻿@inherits LayoutComponentBase
+
+@inject IJSRuntime JS
+
+<head>
+    <LandingHead />
+</head>
+
+<body class="index-page">
+
+    <Header />
+
+    <main class="main">
+        @Body
+    </main>
+
+    <Footer />
+
+    <LandingScripts />
+
+</body>
+
+<div id="blazor-error-ui" data-nosnippet>
+    An unhandled error has occurred.
+    <a href="." class="reload">Reload</a>
+    <span class="dismiss">🗙</span>
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("mobileMenuToggle.initScrollListener");
+            await JS.InvokeVoidAsync("aosInit");
+            await JS.InvokeVoidAsync("navmenuScrollspy");
+            await JS.InvokeVoidAsync("initSwiper");
+        }
+    }
+}
