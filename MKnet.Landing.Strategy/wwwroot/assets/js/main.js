@@ -70,28 +70,6 @@ window.mobileMenuToggle = {
     }
 };
 
-window.initCustomSwiper = function (selector, speed, delay) {
-    const container = document.querySelector(selector);
-    if (!container) return;
-
-    const configScript = container.querySelector('.swiper-config');
-    if (!configScript) return;
-
-    let config = {};
-    try {
-        config = JSON.parse(configScript.textContent);
-    } catch (e) {
-        console.error("Error parsing Swiper config JSON", e);
-        return;
-    }
-
-    // Sobrescribe los valores si se proporcionan
-    if (typeof speed === "number") config.speed = speed;
-    if (typeof delay === "number" && config.autoplay) config.autoplay.delay = delay;
-
-    new Swiper(container, config);
-};
-
 function toggleScrolled() {
     const selectBody = document.querySelector('body');
     const selectHeader = document.querySelector('#header');
@@ -145,23 +123,6 @@ function navmenuScrollspy() {
     })
 }
 
-/**
- * Correct scrolling position upon page load for URLs containing hash links.
- */
-function StartScrolling() {
-    if (window.location.hash) {
-        if (document.querySelector(window.location.hash)) {
-            setTimeout(() => {
-                let section = document.querySelector(window.location.hash);
-                let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
-                window.scrollTo({
-                    top: section.offsetTop - parseInt(scrollMarginTop),
-                    behavior: 'smooth'
-                });
-            }, 100);
-        }
-    }
-}
 
 
 
