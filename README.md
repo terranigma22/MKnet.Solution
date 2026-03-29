@@ -6,6 +6,8 @@ Landing page corporativo para **MKnET**, empresa de soluciones digitales.
 
 Proyecto ASP.NET Core 9.0 con Razor Components que implementa un landing page moderno y responsivo. El sitio presenta los servicios, equipo, portafolio y preguntas frecuentes de la empresa.
 
+[Documentacion detallada](https://deepwiki.com/terranigma22/MKnet.Solution)
+
 ## Tecnologias
 
 - **.NET 9.0** - Framework principal
